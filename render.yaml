@@ -1,0 +1,10 @@
+# Render Blueprint — deploys the Crypto ledger server in one click.
+# In the Render dashboard: New -> Blueprint -> connect the repo/folder with
+# this file. Render sets $PORT itself; the server reads it.
+services:
+  - type: web
+    name: crypto-ledger
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /health
